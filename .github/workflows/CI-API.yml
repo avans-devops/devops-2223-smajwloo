@@ -13,6 +13,8 @@ jobs:
     defaults:
       run:
         working-directory: './api'
+    
+    runs-on: ubuntu-latest
       
     steps:
       - name: Jest coverage report
