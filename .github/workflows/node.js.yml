@@ -13,7 +13,7 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: './First-app/first-app'
+        working-directory: 'First-app'
 
     runs-on: ubuntu-latest
 
