@@ -1,0 +1,21 @@
+name: CI
+
+
+on:
+  push:
+    paths: 'api/**'
+  pull_request:
+    branches: [ 'main' ]
+
+
+jobs:
+  build:
+    defaults:
+      run:
+        working-directory: './api'
+      
+    steps:
+      - name: Jest coverage report
+        uses: ArtiomTr/jest-coverage-report-action@v2.2.1-rc.0
+        with:
+          working-directory: './api'
