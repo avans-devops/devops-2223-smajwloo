@@ -12,7 +12,7 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: './api'
+          working-directory: './First-app/first-app'
     
     runs-on: ubuntu-latest
       
@@ -20,4 +20,4 @@ jobs:
       - name: Jest coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2.2.1-rc.0
         with:
-          working-directory: './api'
+          working-directory: 'First-app/first-app'
