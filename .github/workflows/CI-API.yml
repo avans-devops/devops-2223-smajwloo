@@ -20,4 +20,6 @@ jobs:
       - name: Jest coverage report
         uses: ArtiomTr/jest-coverage-report-action@v2.2.1-rc.0
         with:
+          cache: 'npm'
+          cache-dependency-path: First-app/first-app/package-lock.json
           working-directory: ./First-app/first-app
