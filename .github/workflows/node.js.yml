@@ -13,7 +13,7 @@ jobs:
   build:
     defaults:
       run:
-        working-directory: 'First-app/first-app'
+        working-directory: './First-app/first-app'
 
     runs-on: ubuntu-latest
 
@@ -29,7 +29,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: './First-app/first-app/package-lock.json'
-    - run: npm install
+        cache-dependency-path: '**/package-lock.json'
+    - run: npm ci
     - run: npm run build --if-present
     - run: npm test
