@@ -11,6 +11,9 @@ on:
 
 jobs:
   build:
+    defaults:
+      run:
+        working-directory: ./First-app/first-app
 
     runs-on: ubuntu-latest
 
@@ -26,6 +29,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        working-directory: ./First-app/first-app
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
