@@ -20,4 +20,4 @@ jobs:
         with:
           commit_message: Updated badges
           branch: main
-          file_pattern: README.md
+          file_pattern: ../../README.md
