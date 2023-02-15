@@ -1,0 +1,26 @@
+name: Jest code coverage
+
+on:
+  push:
+    paths: 'first-app/**'
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  coverage:
+    defaults:
+      run:
+        working-directory: './first-app/first-app'
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - name: Run Tests
+        uses: ArtiomTr/jest-coverage-report-action@v2.2.1-rc.0
+        with:
+          working-directory: './first-app/first-app'
