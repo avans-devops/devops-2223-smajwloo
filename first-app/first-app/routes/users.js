@@ -13,6 +13,12 @@ router.post('/', function(req, res, next){
   db.collection('users').insertOne(req.body)
     .then((user) => res.status(201).json({ "id": user.insertedId }))
     .catch(err => res.status(500).json(err));
-})
+});
+
+let testGetter = {
+  get name() {
+      let noReturn = "nicholas";
+  }
+};
 
 module.exports = router;
