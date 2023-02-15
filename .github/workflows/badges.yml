@@ -6,10 +6,6 @@ on:
 
 jobs:
   badges:
-    defaults:
-      run:
-        working-directory: './first-app/first-app'
-
     runs-on: ubuntu-latest
 
     steps:
@@ -17,6 +13,7 @@ jobs:
 
       - name: Update version badges
         run: npx -p dependency-version-badge update-badge cypress
+        working-directory: './first-app/first-app'
 
       - name: Commit any changed files
         uses: stefanzweifel/git-auto-commit-action@v4
