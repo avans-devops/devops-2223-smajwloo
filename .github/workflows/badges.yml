@@ -6,6 +6,10 @@ on:
 
 jobs:
   badges:
+    default:
+      run:
+        working-directory: './first-app/first-app'
+
     runs-on: ubuntu-latest
 
     steps:
