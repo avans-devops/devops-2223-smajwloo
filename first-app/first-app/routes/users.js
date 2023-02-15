@@ -15,10 +15,4 @@ router.post('/', function(req, res, next){
     .catch(err => res.status(500).json(err));
 });
 
-let testGetter = {
-  get name() {
-      let noReturn = "nicholas";
-  }
-};
-
 module.exports = router;
