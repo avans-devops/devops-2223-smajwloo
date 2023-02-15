@@ -6,7 +6,7 @@ on:
 
 jobs:
   badges:
-    default:
+    defaults:
       run:
         working-directory: './first-app/first-app'
 
