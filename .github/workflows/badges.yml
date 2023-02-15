@@ -1,0 +1,22 @@
+name: badges
+on:
+  push:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  badges:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update version badges
+        run: npx -p dependency-version-badge update-badge cypress
+
+      - name: Commit any changed files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updated badges
+          branch: main
+          file_pattern: README.md
